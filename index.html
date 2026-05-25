@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./style.css" />
+	<script type="module" src="./main.mjs"></script>
+	<title>Document</title>
+	<style>
+		*,
+		::before,
+		::after {
+			box-sizing: border-box;
+			font-family: sans-serif;
+			color: black
+		}
+
+		body {
+			padding: 0;
+			margin: 0;
+		}
+
+		.button,
+		a {
+			cursor: pointer;
+		}
+
+		fieldset {
+			padding: 0;
+			border: none;
+			margin-bottom: 2rem;
+		}
+
+		label {
+			font-size: 0.8rem;
+			display: block;
+			padding-bottom: 0.2rem;
+			font-weight: 600;
+			color: hsl(var(--x-font-color));
+		}
+
+		input {
+			padding: 0.5rem;
+			width: stretch;
+			font-size: 0.9rem;
+			border-radius: 0.2rem;
+			border: var(--x-border-size) solid hsl(var(--x-gray-4));
+			background-color: hsla(var(--x-gray-1), 20%);
+		}
+	</style>
+</head>
+
+<body>
+	<x-message text="This is a simple message box." show="false" type="error"></x-message>
+
+	<div style="padding: 2rem;">
+		<button id="open">Open</button>
+		<button id="close">Close</button>
+	</div>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const msg = document.querySelector("x-message")
+			const btn = document.querySelector("#open")
+			const btnClose = document.querySelector("#close")
+
+			btn.addEventListener("click", () => {
+				msg.show()
+			})
+
+			btnClose.addEventListener("click", () => {
+				msg.dismiss()
+			})
+		})
+	</script>
+</body>
+
+</html>

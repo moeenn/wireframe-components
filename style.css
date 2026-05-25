@@ -1,0 +1,39 @@
+:root {
+    /* spancing */
+
+    /* colors */
+    --x-gray-1: 0, 0%, 95%;
+    --x-gray-2: 0, 0%, 90%;
+    --x-gray-3: 0, 0%, 85%;
+    --x-gray-4: 0, 0%, 80%;
+    --x-gray-5: 0, 0%, 70%;
+    --x-gray-6: 0, 0%, 50%;
+
+    --x-blue-1: 214, 100%, 90%;
+    --x-red-1: 0, 100%, 90%;
+
+    /* fonts */
+    --x-font: sans-serif;
+    --x-font-color: 0, 0%, 15%;
+
+    /* fonts: sizes */
+    --x-text-sm: 0.9rem;
+    --x-text-base: 1rem;
+    --x-text-lg: 1.2rem;
+    --x-text-xl: 1.4rem;
+
+    /* fonts: weights */
+    --x-font-bold: 500;
+
+    /* borders */
+    --x-border-radius: 0.2rem;
+    --x-border-size: 1px;
+
+    /* shadow */
+    --x-shadow-sm: 0rem 0.5rem 2rem hsla(var(--x-gray-5), 0.2);
+
+    /* layers */
+    --x-layer-1: 10;
+    --x-layer-2: 20;
+    --x-layer-3: 30;
+}
