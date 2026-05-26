@@ -45,14 +45,10 @@ export class Tabs extends CustomElement {
 						border-bottom: 2px solid transparent;
 						margin-bottom: -2px;
 						border-bottom: 2px solid hsl(var(--x-gray-3));
+						cursor: pointer;
 
-						&.selected {
-							border-bottom: 2px solid black;
-						}
-
-						&:hover {
-							background: hsl(var(--x-gray-1));
-						}
+						&.selected { border-bottom: 2px solid black; }
+						&:hover { background: hsl(var(--x-gray-1)); }
 					}
 				}
 			</style>
