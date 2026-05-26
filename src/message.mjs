@@ -162,3 +162,5 @@ customElements.define("x-message", Message);
 	})
 </script>
 */
+
+// TODO: this should behave as a container, i.e. extra spacing on the sides if vw is too wide.
