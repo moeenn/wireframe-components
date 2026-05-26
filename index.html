@@ -18,6 +18,7 @@
 			body {
 				padding: 0;
 				margin: 0;
+				height: 100vh;
 			}
 
 			.button,
@@ -68,10 +69,198 @@
 					background: hsl(var(--x-gray-3));
 				}
 			}
+
+			table {
+				width: stretch;
+				border-collapse: collapse;
+				table-layout: fixed;
+				border: var(--x-border-size) solid hsl(var(--x-gray-3));
+				border-radius: var(--x-border-radius);
+			}
+
+			.table-container {
+				width: 100%;
+				overflow-x: auto;
+				box-shadow: var(--x-shadow-sm);
+			}
+
+			.x-table {
+				thead {
+					background-color: hsl(var(--x-gray-1));
+					border-bottom: var(--x-border-size) solid
+						hsl(var(--x-gray-3));
+					border-radius: var(--x-border-radius) var(--x-border-radius)
+						0 0;
+
+					th {
+						padding: 0.5rem;
+						font-size: var(--x-text-xs);
+						color: hsl(var(--x-gray-7));
+						font-weight: normal;
+					}
+				}
+
+				tbody {
+					tr {
+						color: hsl(var(--x-font-color));
+						background: white;
+						&:hover {
+							background: hsl(var(--x-gray-1));
+							border-radius: var(--x-border-radius);
+						}
+					}
+					td {
+						padding: 0.7rem 0.5rem;
+						font-size: var(--x-text-sm);
+					}
+				}
+
+				.left {
+					text-align: left;
+				}
+				.center {
+					text-align: center;
+				}
+				.right {
+					text-align: right;
+				}
+			}
+
+			.table-footer {
+				color: hsl(var(--x-font-color));
+				font-size: var(--x-text-xs);
+				padding: 0.5rem;
+				background-color: hsl(var(--x-gray-1));
+				display: flex;
+				justify-content: space-between;
+				border: var(--x-border-size) solid hsl(var(--x-gray-3));
+				border-top: none;
+				border-radius: 0 0 var(--x-border-radius) var(--x-border-radius);
+
+				select {
+					background-color: hsl(var(--x-gray-1));
+					border-radius: var(--x-border-radius);
+					border: none;
+				}
+
+				.pagination {
+					display: inline-flex;
+					button {
+						border: none;
+						border-radius: var(--x-border-radius);
+						padding: 0.2rem;
+						svg {
+							margin: auto;
+							height: 1rem;
+						}
+					}
+					span {
+						margin: auto 0.4rem;
+					}
+				}
+			}
 		</style>
 	</head>
 
 	<body style="padding: 3rem">
-		<x-avatar name="Admin" src="./pic.jpg" size="4rem"></x-avatar>
+		<div class="table-container">
+			<table class="x-table">
+				<colgroup>
+					<col width="50px" />
+					<col width="auto" style="min-width: 200px" />
+					<col width="150px" />
+					<col width="150px" />
+					<col width="150px" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th class="left">ID</th>
+						<th class="left">Email</th>
+						<th class="left">Name</th>
+						<th class="left">Role</th>
+						<th class="left">Joined at</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>10</td>
+						<td>admin@site.com</td>
+						<td>Mr. Admin</td>
+						<td>ADMIN</td>
+						<td>2025-01-20</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>admin@site.com</td>
+						<td>Mr. Admin</td>
+						<td>ADMIN</td>
+						<td>2025-01-20</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>admin@site.com</td>
+						<td>Mr. Admin</td>
+						<td>ADMIN</td>
+						<td>2025-01-20</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>admin@site.com</td>
+						<td>Mr. Admin</td>
+						<td>ADMIN</td>
+						<td>2025-01-20</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>admin@site.com</td>
+						<td>Mr. Admin</td>
+						<td>ADMIN</td>
+						<td>2025-01-20</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="table-footer">
+				<select>
+					<option>10 Results</option>
+					<option>20 Results</option>
+					<option>50 Results</option>
+					<option>100 Results</option>
+				</select>
+
+				<div class="pagination">
+					<button>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M15.75 19.5 8.25 12l7.5-7.5"
+							/>
+						</svg>
+					</button>
+					<span>Page 1 / 5</span>
+					<button>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="m8.25 4.5 7.5 7.5-7.5 7.5"
+							/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
