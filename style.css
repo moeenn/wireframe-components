@@ -1,5 +1,13 @@
 :root {
 	/* spancing */
+	--x-spacing-1: 0.1rem;
+	--x-spacing-2: 0.2rem;
+	--x-spacing-3: 0.4rem;
+	--x-spacing-4: 0.5rem;
+	--x-spacing-5: 0.7rem;
+	--x-spacing-6: 1rem;
+	--x-spacing-7: 1.15rem;
+	--x-spacing-8: 1.4rem;
 
 	/* colors */
 	--x-gray-1: 200, 25%, 95%;
@@ -29,7 +37,8 @@
 
 	/* borders */
 	--x-border-radius: 0.2rem;
-	--x-border-size: 1px;
+	--x-border-size-1: 1px;
+	--x-border-size-2: 2px;
 
 	/* shadow */
 	--x-shadow-sm: 0rem 0.3rem 1rem hsla(var(--x-gray-6), 0.1);

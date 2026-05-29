@@ -33,12 +33,12 @@ class Menu extends CustomElement {
 
 					.content {
 						position: absolute;
-						border: var(--x-border-size) solid hsl(var(--x-gray-3));
+						border: var(--x-border-size-1) solid hsl(var(--x-gray-3));
 						background: hsl(var(--x-gray-1));
 						width: ${this.#width};
 						border-radius: var(--x-border-radius);
 						box-shadow: var(--x-shadow-sm);
-						margin-top: 0.5rem;
+						margin-top: var(--x-spacing-4);
 						z-index: var(--x-layer-3);
 						${this.#getPositionStyles()}
 
@@ -112,7 +112,7 @@ class Menu extends CustomElement {
 
 	/** @param {PointerEvent} e */
 	#handleOutsideClick = (e) => {
-		if (e.target && !this.contains(/** @type {Node} */ (e.target))) {
+		if (e.target && !this.contains(/** @type {Node} */(e.target))) {
 			this.#setOpen("false");
 		}
 	};

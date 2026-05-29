@@ -1,203 +1,208 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./style.css" />
-		<script type="module" src="./src/index.mjs"></script>
-		<title>Document</title>
-		<style>
-			*,
-			::before,
-			::after {
-				box-sizing: border-box;
-				font-family: sans-serif;
-				color: black;
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./style.css" />
+	<script type="module" src="./src/index.mjs"></script>
+	<title>Document</title>
+	<style>
+		*,
+		::before,
+		::after {
+			box-sizing: border-box;
+			font-family: sans-serif;
+			color: black;
+		}
+
+		body {
+			padding: 0;
+			margin: 0;
+			height: 100vh;
+		}
+
+		.button,
+		a {
+			cursor: pointer;
+		}
+
+		fieldset {
+			padding: 0;
+			border: none;
+			margin-bottom: 2rem;
+		}
+
+		label {
+			font-size: 0.8rem;
+			display: block;
+			padding-bottom: var(--x-spacing-2);
+			color: hsl(var(--x-font-color));
+		}
+
+		input {
+			padding: var(--x-spacing-4);
+			width: stretch;
+			font-size: 0.9rem;
+			border-radius: 0.2rem;
+			border: var(--x-border-size-1) solid hsl(var(--x-gray-4));
+			background-color: hsla(var(--x-gray-1), 20%);
+		}
+
+		button {
+			padding: var(--x-spacing-3) var(--x-spacing-5);
+			border: var(--x-border-size-1) solid hsl(var(--x-gray-5));
+			border-radius: var(--x-border-radius);
+			cursor: pointer;
+			background-color: hsl(var(--x-gray-1));
+
+			&:hover {
+				background-color: hsl(var(--x-gray-2));
+			}
+		}
+
+		.menu-item {
+			padding: var(--x-spacing-4);
+			margin: 0;
+			cursor: pointer;
+
+			&:hover {
+				background: hsl(var(--x-gray-3));
+			}
+		}
+
+		table {
+			width: stretch;
+			border-collapse: collapse;
+			table-layout: fixed;
+			border: var(--x-border-size-1) solid hsl(var(--x-gray-3));
+			border-radius: var(--x-border-radius);
+		}
+
+		.table-container {
+			width: 100%;
+			overflow-x: auto;
+			box-shadow: var(--x-shadow-sm);
+		}
+
+		.x-table {
+			thead {
+				background-color: hsl(var(--x-gray-1));
+				border-bottom: var(--x-border-size-1) solid hsl(var(--x-gray-3));
+				border-radius: var(--x-border-radius) var(--x-border-radius) 0 0;
+
+				th {
+					padding: var(--x-spacing-4);
+					font-size: var(--x-text-xs);
+					color: hsl(var(--x-gray-7));
+					font-weight: normal;
+				}
 			}
 
-			body {
-				padding: 0;
-				margin: 0;
-				height: 100vh;
+			tbody {
+				tr {
+					color: hsl(var(--x-font-color));
+					background: white;
+
+					&:hover {
+						background: hsl(var(--x-gray-1));
+						border-radius: var(--x-border-radius);
+					}
+				}
+
+				td {
+					padding: var(--x-spacing-5) var(--x-spacing-4);
+					font-size: var(--x-text-sm);
+				}
 			}
 
-			.button,
-			a {
-				cursor: pointer;
+			.left {
+				text-align: left;
 			}
 
-			fieldset {
-				padding: 0;
+			.center {
+				text-align: center;
+			}
+
+			.right {
+				text-align: right;
+			}
+		}
+
+		.table-footer {
+			color: hsl(var(--x-font-color));
+			font-size: var(--x-text-xs);
+			padding: var(--x-spacing-4);
+			background-color: hsl(var(--x-gray-1));
+			display: flex;
+			justify-content: space-between;
+			border: var(--x-border-size-1) solid hsl(var(--x-gray-3));
+			border-top: none;
+			border-radius: 0 0 var(--x-border-radius) var(--x-border-radius);
+
+			select {
+				background-color: hsl(var(--x-gray-1));
+				border-radius: var(--x-border-radius);
 				border: none;
-				margin-bottom: 2rem;
 			}
 
-			label {
-				font-size: 0.8rem;
-				display: block;
-				padding-bottom: 0.2rem;
-				color: hsl(var(--x-font-color));
-			}
+			.pagination {
+				display: inline-flex;
 
-			input {
-				padding: 0.5rem;
-				width: stretch;
-				font-size: 0.9rem;
-				border-radius: 0.2rem;
-				border: var(--x-border-size) solid hsl(var(--x-gray-4));
-				background-color: hsla(var(--x-gray-1), 20%);
-			}
-
-			button {
-				padding: 0.4rem 0.7rem;
-				border: var(--x-border-size) solid hsl(var(--x-gray-5));
-				border-radius: var(--x-border-radius);
-				cursor: pointer;
-				background-color: hsl(var(--x-gray-1));
-
-				&:hover {
-					background-color: hsl(var(--x-gray-2));
-				}
-			}
-
-			.menu-item {
-				padding: 0.5rem;
-				margin: 0;
-				cursor: pointer;
-
-				&:hover {
-					background: hsl(var(--x-gray-3));
-				}
-			}
-
-			table {
-				width: stretch;
-				border-collapse: collapse;
-				table-layout: fixed;
-				border: var(--x-border-size) solid hsl(var(--x-gray-3));
-				border-radius: var(--x-border-radius);
-			}
-
-			.table-container {
-				width: 100%;
-				overflow-x: auto;
-				box-shadow: var(--x-shadow-sm);
-			}
-
-			.x-table {
-				thead {
-					background-color: hsl(var(--x-gray-1));
-					border-bottom: var(--x-border-size) solid
-						hsl(var(--x-gray-3));
-					border-radius: var(--x-border-radius) var(--x-border-radius)
-						0 0;
-
-					th {
-						padding: 0.5rem;
-						font-size: var(--x-text-xs);
-						color: hsl(var(--x-gray-7));
-						font-weight: normal;
-					}
-				}
-
-				tbody {
-					tr {
-						color: hsl(var(--x-font-color));
-						background: white;
-						&:hover {
-							background: hsl(var(--x-gray-1));
-							border-radius: var(--x-border-radius);
-						}
-					}
-					td {
-						padding: 0.7rem 0.5rem;
-						font-size: var(--x-text-sm);
-					}
-				}
-
-				.left {
-					text-align: left;
-				}
-				.center {
-					text-align: center;
-				}
-				.right {
-					text-align: right;
-				}
-			}
-
-			.table-footer {
-				color: hsl(var(--x-font-color));
-				font-size: var(--x-text-xs);
-				padding: 0.5rem;
-				background-color: hsl(var(--x-gray-1));
-				display: flex;
-				justify-content: space-between;
-				border: var(--x-border-size) solid hsl(var(--x-gray-3));
-				border-top: none;
-				border-radius: 0 0 var(--x-border-radius) var(--x-border-radius);
-
-				select {
-					background-color: hsl(var(--x-gray-1));
-					border-radius: var(--x-border-radius);
+				button {
 					border: none;
+					border-radius: var(--x-border-radius);
+					padding: var(--x-spacing-2);
+
+					svg {
+						margin: auto;
+						height: 1rem;
+					}
 				}
 
-				.pagination {
-					display: inline-flex;
-					button {
-						border: none;
-						border-radius: var(--x-border-radius);
-						padding: 0.2rem;
-						svg {
-							margin: auto;
-							height: 1rem;
-						}
-					}
-					span {
-						margin: auto 0.4rem;
-					}
+				span {
+					margin: auto 0.4rem;
 				}
 			}
+		}
 
-			.table-actions {
-				display: flex;
-				justify-content: space-between;
-				padding: 0.5rem;
-				background-color: hsla(var(--x-gray-1), 0.5);
-				color: hsl(var(--x-font-color));
-				border: var(--x-border-size) solid hsl(var(--x-gray-3));
-				border-bottom: none;
-				font-size: var(--x-text-xs);
+		.table-actions {
+			display: flex;
+			justify-content: space-between;
+			padding: var(--x-spacing-3);
+			background-color: hsla(var(--x-gray-1), 0.5);
+			color: hsl(var(--x-font-color));
+			border: var(--x-border-size-1) solid hsl(var(--x-gray-3));
+			border-bottom: none;
+			font-size: var(--x-text-xs);
 
-				div {
-					display: inline-flex;
-					button {
-						background-color: hsl(var(--x-gray-1));
-						margin: auto 0;
-						border-radius: var(--x-border-radius);
-						border: var(--x-border-size) solid hsl(var(--x-gray-4));
-						color: var(--x-font-color);
+			div {
+				display: inline-flex;
 
-						&:hover {
-							background-color: hsl(var(--x-gray-2));
-						}
-					}
+				button {
+					background-color: hsl(var(--x-gray-1));
+					margin: auto 0;
+					border-radius: var(--x-border-radius);
+					border: var(--x-border-size-1) solid hsl(var(--x-gray-4));
+					color: var(--x-font-color);
 
-					input[type="search"] {
-						background-color: hsl(var(--x-gray-1));
+					&:hover {
+						background-color: hsl(var(--x-gray-2));
 					}
 				}
+
+				input[type="search"] {
+					background-color: hsl(var(--x-gray-1));
+				}
 			}
-		</style>
-	</head>
+		}
+	</style>
+</head>
 
-	<body>
-		<x-message text="This is a simple message box." type="success"></x-message>
+<body>
+	<x-message text="This is a simple message box." type="success"></x-message>
 
-		<div style="padding: 2rem">
-
-
+	<div style="padding: 2rem">
 		<div class="table-actions">
 			<div>
 				<button id="open" title="Add new user"">Add</button>
@@ -205,11 +210,7 @@
 
 			<div>
 				<input
-					id="search"
-					name="search"
-					type="search"
-					placeholder="Search"
-				/>
+					id=" search" name="search" type="search" placeholder="Search" />
 			</div>
 		</div>
 
@@ -280,72 +281,55 @@
 
 			<div class="pagination">
 				<button>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke-width="1.5"
-						stroke="currentColor"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M15.75 19.5 8.25 12l7.5-7.5"
-						/>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+						stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
 					</svg>
 				</button>
 				<span>Page 1 / 5</span>
 				<button>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke-width="1.5"
-						stroke="currentColor"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="m8.25 4.5 7.5 7.5-7.5 7.5"
-						/>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+						stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 					</svg>
 				</button>
 			</div>
 		</div>
 
 		<x-modal title="Add User" width="30rem">
-		    <form style="padding: 1rem">
-		        <fieldset>
-		            <label for="name">Name</label>
-		            <input id="name" name="name" />
-		        </fieldset>
+			<form style="padding: 1rem">
+				<fieldset>
+					<label for="name">Name</label>
+					<input id="name" name="name" />
+				</fieldset>
 
-		        <fieldset>
-		            <label for="password">Password</label>
-		            <input id="password" name="password" />
-		        </fieldset>
+				<fieldset>
+					<label for="password">Password</label>
+					<input id="password" name="password" />
+				</fieldset>
 
-		        <fieldset>
-		            <label for="confirmPassword">Confirm Password</label>
-		            <input id="confirmPassword" name="confirmPassword" />
-		        </fieldset>
-		    </form>
+				<fieldset>
+					<label for="confirmPassword">Confirm Password</label>
+					<input id="confirmPassword" name="confirmPassword" />
+				</fieldset>
+			</form>
 
-		    <div slot="footer">
-		        <button>Save</button>
-		    </div>
+			<div slot="footer">
+				<button>Save</button>
+			</div>
 		</x-modal>
 
 		<script>
-		    document.addEventListener("DOMContentLoaded", () => {
-		        const open = document.querySelector("#open")
-		        const modal = document.querySelector("x-modal")
+			document.addEventListener("DOMContentLoaded", () => {
+				const open = document.querySelector("#open")
+				const modal = document.querySelector("x-modal")
 
-		        open.addEventListener("click", () => {
-		            modal.setOpen()
-		        })
-		    })
+				open.addEventListener("click", () => {
+					modal.setOpen()
+				})
+			})
 		</script>
-		</div>
-	</body>
+	</div>
+</body>
+
 </html>

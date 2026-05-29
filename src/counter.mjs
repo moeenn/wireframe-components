@@ -20,13 +20,13 @@ class Counter extends CustomElement {
 			<style>
                 .x-counter {
                     display: inline-flex;
-                    border: var(--x-border-size) hsl(var(--x-gray-5)) solid;
+                    border: var(--x-border-size-1) hsl(var(--x-gray-5)) solid;
                     border-radius: var(--x-border-radius);
                     font-family: var(--x-font);
                     font-size: var(--x-text-sm);
 
                     .increment, .decrement, .value {
-                        padding: 0.3rem 0.5rem;
+                        padding: var(--x-spacing-2) var(--x-spacing-4);
                     }
 
                     .increment, .decrement {

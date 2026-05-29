@@ -34,7 +34,7 @@ class Message extends CustomElement {
 			<style>
                 #x-message {
                     background-color: ${this.#getBoxColor()};
-                    padding: 1rem;
+                    padding: var(--x-spacing-6);
                     font-size: var(--x-text-sm);
                     display: flex;
                     justify-content: space-between;

@@ -37,12 +37,12 @@ export class Tabs extends CustomElement {
 				#x-tabs {
 					border-bottom: 2px solid hsl(var(--x-gray-3));
 					button#tab {
-						padding: 0.5rem 0.8rem;
+						padding: var(--x-spacing-4) var(--x-spacing-5);
 						color: hsl(var(--x-font-color));
 						border: none;
 						background: none;
 						border-radius: var(--x-border-radius) var(--x-border-radius) 0 0;
-						border-bottom: 2px solid transparent;
+						border-bottom: var(--x-spacing-1) solid transparent;
 						margin-bottom: -2px;
 						border-bottom: 2px solid hsl(var(--x-gray-3));
 						cursor: pointer;

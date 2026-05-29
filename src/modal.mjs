@@ -28,7 +28,7 @@ class Modal extends CustomElement {
 
 	                .window-container {
 	                    margin: auto;
-	                    padding: 1rem;
+	                    padding: var(--x-spacing-6);
 	                    width: ${this.width};
 
 			           .window {
@@ -36,10 +36,10 @@ class Modal extends CustomElement {
 			               border-radius: var(--x-border-radius);
 			               height: ${this.height ? this.height : "auto"};
 			               box-shadow: var(--x-shadow-sm);
-			               border: var(--x-border-size) solid hsl(var(--x-gray-4));
+			               border: var(--x-border-size-1) solid hsl(var(--x-gray-4));
 
 			               .modal-header {
-			                   padding: 1rem;
+			                   padding: var(--x-spacing-6);
 			                   display: flex;
 			                   justify-content: space-between;
 			                   font-family: var(--x-font);
@@ -57,7 +57,7 @@ class Modal extends CustomElement {
 
 			               .modal-footer {
 			                   background-color: hsla(var(--x-gray-2), 50%);
-			                   padding: 1.3rem 1rem;
+			                   padding: var(--x-spacing-8) var(--x-spacing-6);
 			               }
 			           }
                     }
@@ -129,36 +129,36 @@ customElements.define("x-modal", Modal);
 <button id="open">Open</button>
 
 <x-modal title="Add User" width="30rem">
-    <form style="padding: 1rem">
-        <fieldset>
-            <label for="name">Name</label>
-            <input id="name" name="name" />
-        </fieldset>
+	<form style="padding: 1rem">
+		<fieldset>
+			<label for="name">Name</label>
+			<input id="name" name="name" />
+		</fieldset>
 
-        <fieldset>
-            <label for="password">Password</label>
-            <input id="password" name="password" />
-        </fieldset>
+		<fieldset>
+			<label for="password">Password</label>
+			<input id="password" name="password" />
+		</fieldset>
 
-        <fieldset>
-            <label for="confirmPassword">Confirm Password</label>
-            <input id="confirmPassword" name="confirmPassword" />
-        </fieldset>
-    </form>
+		<fieldset>
+			<label for="confirmPassword">Confirm Password</label>
+			<input id="confirmPassword" name="confirmPassword" />
+		</fieldset>
+	</form>
 
-    <div slot="footer">
-        <button>Save</button>
-    </div>
+	<div slot="footer">
+		<button>Save</button>
+	</div>
 </x-modal>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const open = document.querySelector("#open")
-        const modal = document.querySelector("x-modal")
+	document.addEventListener("DOMContentLoaded", () => {
+		const open = document.querySelector("#open")
+		const modal = document.querySelector("x-modal")
 
-        open.addEventListener("click", () => {
-            modal.setOpen()
-        })
-    })
+		open.addEventListener("click", () => {
+			modal.setOpen()
+		})
+	})
 </script>
 */
