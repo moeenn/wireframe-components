@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<script type="module" src="../src/index.mjs"></script>
+		<title>Document</title>
+	</head>
+
+	<body class="container">
+		<button id="open">Open</button>
+
+		<x-modal heading="Add User" width="30rem">
+			<form style="padding: var(--x-spacing-6)">
+				<fieldset>
+					<label for="name">Name</label>
+					<input id="name" name="name" />
+				</fieldset>
+
+				<fieldset>
+					<label for="password">Password</label>
+					<input id="password" name="password" />
+				</fieldset>
+
+				<fieldset>
+					<label for="confirmPassword">Confirm Password</label>
+					<input id="confirmPassword" name="confirmPassword" />
+				</fieldset>
+			</form>
+
+			<div slot="footer">
+				<button>Save</button>
+			</div>
+		</x-modal>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const open = document.querySelector("#open");
+				const modal = document.querySelector("x-modal");
+
+				open.addEventListener("click", () => {
+					modal.setOpen();
+				});
+			});
+		</script>
+	</body>
+</html>

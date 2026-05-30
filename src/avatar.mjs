@@ -6,7 +6,6 @@ class Avatar extends CustomElement {
 	/** @type {string | null} */
 	#src = null;
 	#size = "5rem";
-	#name = "";
 
 	#styles() {
 		return `
@@ -15,14 +14,14 @@ class Avatar extends CustomElement {
 					display: inline-flex;
 					height: ${this.#size};
 					width: ${this.#size};
-					background: hsl(var(--x-gray-2));
+					background: hsl(var(--x-gray-3));
 					border-radius: 100%;
 
 					.icon {
 						margin: auto;
-						height: max(1rem, calc(${this.#size} - 3rem));
-						width: max(1rem, calc(${this.#size} - 3rem));
-						color: hsl(var(--x-gray-6));
+						height: calc(${this.#size} * 0.45);
+						width: calc(${this.#size} * 0.45);
+						color: hsl(var(--x-gray-7));
 					}
 
 					.picture {
@@ -44,12 +43,6 @@ class Avatar extends CustomElement {
 			this.#src = src;
 		}
 
-		const name = this.getAttribute("name");
-		if (!name) {
-			throw new Error("name attribute is required");
-		}
-		this.#name = name;
-
 		const size = this.getAttribute("size");
 		if (size) {
 			this.#size = size;
@@ -57,7 +50,7 @@ class Avatar extends CustomElement {
 
 		this.$add(`
 			${this.#styles()}
-			<div class="x-avatar" title="${this.#name}">
+			<div class="x-avatar">
 				${this.#userIcon()}
 			</div>
 		`);
@@ -79,7 +72,3 @@ class Avatar extends CustomElement {
 }
 
 customElements.define("x-avatar", Avatar);
-
-/*
-<x-avatar name="Admin" src="./pic.jpg" size="4rem"></x-avatar>
-*/

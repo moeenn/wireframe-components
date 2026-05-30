@@ -35,20 +35,20 @@ export class Tabs extends CustomElement {
 		return `
 			<style>
 				#x-tabs {
-					border-bottom: 2px solid hsl(var(--x-gray-3));
+					border-bottom: var(--x-border-size-2) solid hsl(var(--x-gray-3));
 					button#tab {
 						padding: var(--x-spacing-4) var(--x-spacing-5);
 						color: hsl(var(--x-font-color));
 						border: none;
 						background: none;
 						border-radius: var(--x-border-radius) var(--x-border-radius) 0 0;
-						border-bottom: var(--x-spacing-1) solid transparent;
-						margin-bottom: -2px;
-						border-bottom: 2px solid hsl(var(--x-gray-3));
+						border-bottom: var(--x-border-size-2) solid transparent;
+						margin-bottom: calc(var(--x-border-size-2) * -1);
+						border-bottom: var(--x-border-size-2) solid hsl(var(--x-gray-3));
 						cursor: pointer;
 
-						&.selected { border-bottom: 2px solid black; }
-						&:hover { background: hsl(var(--x-gray-1)); }
+						&.selected { border-bottom: 2px solid hsl(var(--x-primary-1)); }
+						&:hover { background: hsl(var(--x-gray-2)); }
 					}
 				}
 			</style>
@@ -103,19 +103,3 @@ export class Tabs extends CustomElement {
 }
 
 customElements.define("x-tabs", Tabs);
-
-/*
-<x-tabs
-	tabs='[{ "id": "one", "title": "Tab One" },{ "id": "two", "title": "Tab Two" },{ "id": "three", "title": "Tab Three" }]'
-	selected="two"
-></x-tabs>
-
-<script>
-	document.addEventListener("DOMContentLoaded", () => {
-		const t = document.querySelector("x-tabs");
-		t.addEventListener("change", (e) => {
-			console.log("tab changed ->", e.detail.selected);
-		});
-	});
-</script>
-*/

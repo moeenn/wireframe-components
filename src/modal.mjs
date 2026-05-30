@@ -12,6 +12,9 @@ class Modal extends CustomElement {
 	/** @type {string | null} */
 	height = null;
 
+	/** @type {string} */
+	heading = "";
+
 	#styles() {
 		return `
 			<style>
@@ -23,7 +26,7 @@ class Modal extends CustomElement {
 	                z-index: var(--x-layer-3);
 	                width: 100vw;
 	                height: 100vh;
-	                background: hsla(var(--x-gray-5), 40%);
+	                background: hsla(var(--x-gray-7), 40%);
 	                display: flex;
 
 	                .window-container {
@@ -83,6 +86,12 @@ class Modal extends CustomElement {
 			this.height = height;
 		}
 
+		const heading = this.getAttribute("heading");
+		if (!heading) {
+			throw new Error("heading property is missing");
+		}
+		this.heading = heading;
+
 		this.$add(this.#styles());
 		if (this.open) {
 			this.$add(this.#modalContent());
@@ -95,7 +104,7 @@ class Modal extends CustomElement {
             	<div class="window-container">
 	                <div class="window">
 	                    <div class="modal-header">
-	                        <h2>${this.title}</h2>
+	                        <h2>${this.heading}</h2>
 	                        <button id="close" class="close">x</button>
 	                    </div>
 	                    <slot></slot>
@@ -124,41 +133,3 @@ class Modal extends CustomElement {
 }
 
 customElements.define("x-modal", Modal);
-
-/*
-<button id="open">Open</button>
-
-<x-modal title="Add User" width="30rem">
-	<form style="padding: 1rem">
-		<fieldset>
-			<label for="name">Name</label>
-			<input id="name" name="name" />
-		</fieldset>
-
-		<fieldset>
-			<label for="password">Password</label>
-			<input id="password" name="password" />
-		</fieldset>
-
-		<fieldset>
-			<label for="confirmPassword">Confirm Password</label>
-			<input id="confirmPassword" name="confirmPassword" />
-		</fieldset>
-	</form>
-
-	<div slot="footer">
-		<button>Save</button>
-	</div>
-</x-modal>
-
-<script>
-	document.addEventListener("DOMContentLoaded", () => {
-		const open = document.querySelector("#open")
-		const modal = document.querySelector("x-modal")
-
-		open.addEventListener("click", () => {
-			modal.setOpen()
-		})
-	})
-</script>
-*/

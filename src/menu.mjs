@@ -112,7 +112,7 @@ class Menu extends CustomElement {
 
 	/** @param {PointerEvent} e */
 	#handleOutsideClick = (e) => {
-		if (e.target && !this.contains(/** @type {Node} */(e.target))) {
+		if (e.target && !this.contains(/** @type {Node} */ (e.target))) {
 			this.#setOpen("false");
 		}
 	};
@@ -128,68 +128,3 @@ class Menu extends CustomElement {
 }
 
 customElements.define("x-menu", Menu);
-
-/*
-<body style="padding: 3rem">
-	<x-menu width="40rem">
-		<button slot="trigger" position="right">Open Menu</button>
-		<div slot="items">
-			<p class="menu-item">One</p>
-			<p class="menu-item">Two</p>
-			<p class="menu-item">Three</p>
-			<p class="menu-item">Four</p>
-			<p class="menu-item">Five</p>
-		</div>
-	</x-menu>
-
-	<x-menu style="position: absolute; right: 2rem" position="left">
-		<button slot="trigger">Open Menu</button>
-		<div slot="items">
-			<p class="menu-item">One</p>
-			<p class="menu-item">Two</p>
-			<p class="menu-item">Three</p>
-			<p class="menu-item">Four</p>
-			<p class="menu-item">Five</p>
-		</div>
-	</x-menu>
-
-	<x-menu
-		style="position: absolute; bottom: 2rem; left: 2rem"
-		position="top-right"
-	>
-		<button slot="trigger">Open Menu</button>
-		<div slot="items">
-			<p class="menu-item">One</p>
-			<p class="menu-item">Two</p>
-			<p class="menu-item">Three</p>
-			<p class="menu-item">Four</p>
-			<p class="menu-item">Five</p>
-		</div>
-	</x-menu>
-
-	<x-menu
-		style="position: absolute; bottom: 2rem; right: 2rem"
-		position="top-left"
-	>
-		<button slot="trigger">Open Menu</button>
-		<div slot="items">
-			<p class="menu-item">One</p>
-			<p class="menu-item">Two</p>
-			<p class="menu-item">Three</p>
-			<p class="menu-item">Four</p>
-			<p class="menu-item">Five</p>
-		</div>
-	</x-menu>
-
-	<script>
-		const menu = document.querySelector("x-menu");
-		const items = document.querySelectorAll(".menu-item");
-		items.forEach((item) =>
-			item.addEventListener("click", (e) => {
-				console.log("clicked ::", e.target.innerText);
-				menu.setAttribute("open", "false");
-			}),
-		);
-	</script>
-</body>
-*/

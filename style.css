@@ -10,6 +10,9 @@
 	--x-spacing-8: 1.4rem;
 
 	/* colors */
+	--x-primary-1: 200, 25%, 0%;
+	--x-primary-2: 200, 25%, 15%;
+
 	--x-gray-1: 200, 25%, 95%;
 	--x-gray-2: 200, 25%, 90%;
 	--x-gray-3: 200, 25%, 85%;
@@ -18,8 +21,17 @@
 	--x-gray-6: 200, 25%, 50%;
 	--x-gray-7: 200, 25%, 30%;
 
-	--x-blue-1: 214, 100%, 90%;
-	--x-red-1: 0, 100%, 90%;
+	--x-blue-1: 214, 100%, 85%;
+	--x-blue-2: 214, 100%, 75%;
+	--x-blue-5: 214, 100%, 15%;
+
+	--x-green-1: 122, 39%, 85%;
+	--x-green-2: 122, 39%, 75%;
+	--x-green-5: 122, 39%, 15%;
+
+	--x-red-1: 0, 100%, 85%;
+	--x-red-2: 0, 100%, 75%;
+	--x-red-5: 0, 100%, 15%;
 
 	/* fonts */
 	--x-font: sans-serif;
@@ -41,10 +53,100 @@
 	--x-border-size-2: 2px;
 
 	/* shadow */
-	--x-shadow-sm: 0rem 0.3rem 1rem hsla(var(--x-gray-6), 0.1);
+	--x-shadow-sm: 0rem 0.3rem 1rem hsla(var(--x-gray-7), 0.1);
 
 	/* layers */
 	--x-layer-1: 10;
 	--x-layer-2: 20;
 	--x-layer-3: 30;
+
+	/* container */
+	--x-container-width: 90%;
+}
+
+body {
+	margin: 0;
+	font-family: var(--x-font);
+	color: var(--x-font-color);
+}
+
+.container {
+	margin: 0 auto;
+	max-width: var(--x-container-width);
+	padding: var(--x-spacing-6);
+}
+
+form {
+	fieldset {
+		padding: 0;
+		border: none;
+		margin-bottom: 2rem;
+	}
+
+	label {
+		font-size: 0.8rem;
+		display: block;
+		padding-bottom: var(--x-spacing-2);
+		color: hsl(var(--x-font-color));
+	}
+
+	input {
+		padding: var(--x-spacing-4);
+		width: stretch;
+		font-size: 0.9rem;
+		border-radius: 0.2rem;
+		border: var(--x-border-size-1) solid hsl(var(--x-gray-4));
+		background-color: hsla(var(--x-gray-1), 20%);
+	}
+}
+
+.button {
+	color: var(--x-font-color);
+	padding: var(--x-spacing-3) var(--x-spacing-5);
+	border: var(--x-border-size-1) solid hsl(var(--x-gray-5));
+	border-radius: var(--x-border-radius);
+	cursor: pointer;
+	background-color: hsl(var(--x-gray-1));
+
+	&:hover {
+		background-color: hsl(var(--x-gray-2));
+	}
+
+	&.secondary {
+		background-color: transparent;
+		border: var(--x-border-size-1) solid hsl(var(--x-primary-2));
+	}
+
+	&.primary {
+		background-color: hsl(var(--x-primary-2));
+		border-color: hsl(var(--x-primary-2));
+		color: white;
+	}
+}
+
+.badge {
+	background-color: hsl(var(--x-gray-2));
+	display: inline;
+	padding: var(--x-spacing-2) var(--x-spacing-4);
+	font-size: var(--x-text-xs);
+	border: var(--x-border-size-1) solid hsl(var(--x-gray-4));
+	border-radius: var(--x-border-radius);
+
+	&.green {
+		background-color: hsl(var(--x-green-1));
+		border-color: hsl(var(--x-green-2));
+		color: hsl(var(--x-green-5));
+	}
+
+	&.red {
+		background-color: hsl(var(--x-red-1));
+		border-color: hsl(var(--x-red-2));
+		color: hsl(var(--x-red-5));
+	}
+
+	&.blue {
+		background-color: hsl(var(--x-blue-1));
+		border-color: hsl(var(--x-blue-2));
+		color: hsl(var(--x-blue-5));
+	}
 }

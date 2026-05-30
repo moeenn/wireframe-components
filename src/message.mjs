@@ -34,13 +34,24 @@ class Message extends CustomElement {
 			<style>
                 #x-message {
                     background-color: ${this.#getBoxColor()};
-                    padding: var(--x-spacing-6);
                     font-size: var(--x-text-sm);
-                    display: flex;
-                    justify-content: space-between;
 
-                    p { margin: auto 0; }
-                    button { cursor: pointer; }
+                    div {
+	                    margin: 0 auto;
+						max-width: var(--x-container-width);
+						padding: var(--x-spacing-6);
+	                    display: flex;
+	                    justify-content: space-between;
+						p { margin: auto 0; }
+                    	button {
+                     		background-color: hsla(0, 0%, 100%, 0.5);
+                     		cursor: pointer;
+                       		border: none;
+                         	border-radius: var(--x-boder-radius);
+                            padding: var(--x-spacing-2) var(--x-spacing-4);
+                            margin: auto 0;
+                       }
+                    }
                 }
             </style>
 		`;
@@ -71,22 +82,27 @@ class Message extends CustomElement {
 
 	#getBoxColor() {
 		switch (this.#type) {
+			case "info":
+				return "hsl(var(--x-blue-1))";
+
 			case "success":
-				return "hsla(var(--x-blue-1), 100%)";
+				return "hsl(var(--x-green-1))";
 
 			case "error":
-				return "hsla(var(--x-red-1), 100%)";
+				return "hsl(var(--x-red-1))";
 
 			default:
-				return "hsla(var(--x-gray-1), 100%)";
+				return "hsl(var(--x-gray-2))";
 		}
 	}
 
 	#boxContent() {
 		return `
             <div id="x-message">
-                <p data-text>${this.#text}</p>
-                <button data-close>x</>
+            	<div class="container">
+		             <p data-text>${this.#text}</p>
+		             <button data-close>x</button>
+             	</div>
             </div>
         `;
 	}
@@ -136,31 +152,3 @@ class Message extends CustomElement {
 }
 
 customElements.define("x-message", Message);
-
-/*
-
-<x-message text="This is a simple message box." type="error"></x-message>
-
-<div style="padding: 2rem;">
-	<button id="open">Open</button>
-	<button id="close">Close</button>
-</div>
-
-<script>
-	document.addEventListener("DOMContentLoaded", () => {
-		const msg = document.querySelector("x-message")
-		const btn = document.querySelector("#open")
-		const btnClose = document.querySelector("#close")
-
-		btn.addEventListener("click", () => {
-			msg.show()
-		})
-
-		btnClose.addEventListener("click", () => {
-			msg.dismiss()
-		})
-	})
-</script>
-*/
-
-// TODO: this should behave as a container, i.e. extra spacing on the sides if vw is too wide.

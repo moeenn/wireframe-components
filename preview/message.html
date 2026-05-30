@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<script type="module" src="../src/index.mjs"></script>
+		<title>Document</title>
+	</head>
+
+	<body>
+		<x-message
+			text="This is a simple message box."
+			type="error"
+		></x-message>
+
+		<div class="container">
+			<button id="open">Open</button>
+			<button id="close">Close</button>
+		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const msg = document.querySelector("x-message");
+				const btn = document.querySelector("#open");
+				const btnClose = document.querySelector("#close");
+
+				btn.addEventListener("click", () => {
+					msg.show();
+				});
+
+				btnClose.addEventListener("click", () => {
+					msg.dismiss();
+				});
+			});
+		</script>
+	</body>
+</html>

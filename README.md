@@ -15,13 +15,13 @@ A set of web-components, usable in all front-end frameworks.
 
 ### Todo
 
+- [ ] New Component: Breadcrumbs.
+- [ ] New Component: Lightbox.
+- [ ] New Component: Progress.
+- [ ] New Component: Lightbox.
+- [ ] New Component: Tooltip.
+- [ ] New Component: Password field.
 - [ ] New Component: File upload field.
 - [ ] New Component: Paginated table components.
 - [ ] New Component: Multi-select menu.
 - [ ] Add custom events to existing components.
-- [ ] Consider adding general styles for common things (which dont need interactive web-components).
-    - Headings
-    - Code
-    - Buttons (primary, secondary, outline)
-    - Lists
-    - Sheet (i.e. card container)

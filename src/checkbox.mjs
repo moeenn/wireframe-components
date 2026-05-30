@@ -35,16 +35,17 @@ class Checkbox extends CustomElement {
 						display: inline-flex;
 						width: var(--x-spacing-5);
 						height: var(--x-spacing-5);
-						background: hsl(var(--x-gray-2));
-						border: 5px solid hsl(var(--x-gray-2));
+						background: hsl(var(--x-gray-3));
+						border: 5px solid hsl(var(--x-gray-3));
 						border-radius: var(--x-border-radius);
 
 						&.checked {
-							background: black;
+							background: hsl(var(--x-primary-1));
 						}
 					}
 
 					.label {
+						font-family: var(--x-font);
 						color: hsl(var(--x-font-color));
 						margin: auto 0 auto var(--x-spacing-4);
 					}
@@ -86,7 +87,8 @@ class Checkbox extends CustomElement {
 
 	#toggleChecked = () => {
 		this.$(".box").classList.toggle("checked");
-		this.$("[data-input]").checked = !this.#checked;
+		/** @type {HTMLInputElement} */ (this.$("[data-input]")).checked =
+			!this.#checked;
 		this.#checked = !this.#checked;
 	};
 
@@ -102,7 +104,8 @@ class Checkbox extends CustomElement {
 			el.classList.remove("checked");
 		}
 
-		this.$("[data-input]").checked = newValue;
+		/** @type {HTMLInputElement} */ (this.$("[data-input]")).checked =
+			newValue;
 		this.#checked = newValue;
 	};
 
@@ -112,11 +115,3 @@ class Checkbox extends CustomElement {
 }
 
 customElements.define("x-checkbox", Checkbox);
-
-/*
-<x-checkbox
-	name="approve"
-	label="Approve Registration"
-	checked
-></x-checkbox>
-*/

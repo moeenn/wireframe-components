@@ -46,6 +46,7 @@ class Loader extends CustomElement {
 					margin: auto 0 auto 0.5rem;
 					vertical-align: text-bottom;
 					color: hsl(var(--x-font-color));
+					font-family: var(--x-font);
 				}
 			}
 
@@ -89,7 +90,3 @@ class Loader extends CustomElement {
 }
 
 customElements.define("x-loader", Loader);
-
-/*
-<x-loader text="Loading Application"></x-loader>
-*/
