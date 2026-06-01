@@ -150,3 +150,11 @@ form {
 		color: hsl(var(--x-blue-5));
 	}
 }
+
+/* hide slotted content on page load */
+x-menu:not(:defined) {
+	display: none;
+}
+x-modal:not(:defined) {
+	display: none;
+}

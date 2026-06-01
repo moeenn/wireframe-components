@@ -34,7 +34,7 @@ class Menu extends CustomElement {
 					.content {
 						position: absolute;
 						border: var(--x-border-size-1) solid hsl(var(--x-gray-3));
-						background: hsl(var(--x-gray-1));
+						background: white;
 						width: ${this.#width};
 						border-radius: var(--x-border-radius);
 						box-shadow: var(--x-shadow-sm);
@@ -60,10 +60,10 @@ class Menu extends CustomElement {
 				return "right: 0;";
 
 			case "top-right":
-				return "bottom: 0;";
+				return "bottom: calc(100% + var(--x-spacing-4));";
 
 			case "top-left":
-				return "right: 0; bottom: 0;";
+				return "right: 0; bottom: calc(100% + var(--x-spacing-4));";
 
 			default:
 				throw new Error("invalid position value: " + this.#position);

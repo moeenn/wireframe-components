@@ -6,3 +6,4 @@ import "./tabs.mjs";
 import "./checkbox.mjs";
 import "./menu.mjs";
 import "./avatar.mjs";
+import "./breadcrumbs.mjs";

@@ -15,9 +15,6 @@ A set of web-components, usable in all front-end frameworks.
 
 ### Todo
 
-- [ ] New Component: Breadcrumbs.
-- [ ] New Component: Lightbox.
-- [ ] New Component: Progress.
 - [ ] New Component: Lightbox.
 - [ ] New Component: Tooltip.
 - [ ] New Component: Password field.
