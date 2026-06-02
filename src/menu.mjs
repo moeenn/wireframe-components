@@ -40,34 +40,20 @@ class Menu extends CustomElement {
 						box-shadow: var(--x-shadow-sm);
 						margin-top: var(--x-spacing-4);
 						z-index: var(--x-layer-3);
-						${this.#getPositionStyles()}
 
-						&.hidden {
-							display: none;
+						&.left { right: 0; }
+						&.top-right { bottom: calc(100% + var(--x-spacing-4)); }
+
+						&.top-left {
+							right: 0;
+							bottom: calc(100% + var(--x-spacing-4));
 						}
+
+						&.hidden { display: none; }
 					}
 				}
 			</style>
 		`;
-	}
-
-	#getPositionStyles() {
-		switch (this.#position) {
-			case "right":
-				return "";
-
-			case "left":
-				return "right: 0;";
-
-			case "top-right":
-				return "bottom: calc(100% + var(--x-spacing-4));";
-
-			case "top-left":
-				return "right: 0; bottom: calc(100% + var(--x-spacing-4));";
-
-			default:
-				throw new Error("invalid position value: " + this.#position);
-		}
 	}
 
 	constructor() {
@@ -86,7 +72,7 @@ class Menu extends CustomElement {
 			${this.#styles()}
 			<div class="x-menu">
 				<slot name="trigger"></slot>
-				<div class="content ${this.#open ? "" : "hidden"}">
+				<div class="content ${this.#position} ${this.#open ? "" : "hidden"}">
 					<slot name="items"></slot>
 				</div>
 			</div>

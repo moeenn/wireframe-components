@@ -10,16 +10,16 @@
 	--x-spacing-8: 1.4rem;
 
 	/* colors */
-	--x-primary-1: 200, 25%, 0%;
-	--x-primary-2: 200, 25%, 15%;
+	--x-primary-1: 200, 20%, 0%;
+	--x-primary-2: 200, 20%, 15%;
 
-	--x-gray-1: 200, 25%, 95%;
-	--x-gray-2: 200, 25%, 90%;
-	--x-gray-3: 200, 25%, 85%;
-	--x-gray-4: 200, 25%, 80%;
-	--x-gray-5: 200, 25%, 70%;
-	--x-gray-6: 200, 25%, 50%;
-	--x-gray-7: 200, 25%, 30%;
+	--x-gray-1: 200, 20%, 95%;
+	--x-gray-2: 200, 20%, 90%;
+	--x-gray-3: 200, 20%, 85%;
+	--x-gray-4: 200, 20%, 80%;
+	--x-gray-5: 200, 20%, 70%;
+	--x-gray-6: 200, 20%, 50%;
+	--x-gray-7: 200, 20%, 30%;
 
 	--x-blue-1: 214, 100%, 85%;
 	--x-blue-2: 214, 100%, 75%;
@@ -124,6 +124,7 @@ a {
 	}
 
 	&.primary {
+		padding: var(--x-spacing-3) var(--x-spacing-6);
 		background-color: hsl(var(--x-primary-2));
 		border-color: hsl(var(--x-primary-2));
 		color: white;
