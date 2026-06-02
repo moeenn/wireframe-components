@@ -33,8 +33,8 @@ class Checkbox extends CustomElement {
 
 					.box {
 						display: inline-flex;
-						width: var(--x-spacing-5);
-						height: var(--x-spacing-5);
+						width: var(--x-space-5);
+						height: var(--x-space-5);
 						background: hsl(var(--x-gray-3));
 						border: 5px solid hsl(var(--x-gray-3));
 						border-radius: var(--x-border-radius);
@@ -47,7 +47,7 @@ class Checkbox extends CustomElement {
 					.label {
 						font-family: var(--x-font);
 						color: hsl(var(--x-font-color));
-						margin: auto 0 auto var(--x-spacing-4);
+						margin: auto 0 auto var(--x-space-4);
 					}
 
 					.input { display: none; }

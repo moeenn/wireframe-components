@@ -1,13 +1,13 @@
 :root {
 	/* spancing */
-	--x-spacing-1: 0.1rem;
-	--x-spacing-2: 0.2rem;
-	--x-spacing-3: 0.4rem;
-	--x-spacing-4: 0.5rem;
-	--x-spacing-5: 0.7rem;
-	--x-spacing-6: 1rem;
-	--x-spacing-7: 1.15rem;
-	--x-spacing-8: 1.4rem;
+	--x-space-1: 0.1rem;
+	--x-space-2: 0.2rem;
+	--x-space-3: 0.4rem;
+	--x-space-4: 0.5rem;
+	--x-space-5: 0.7rem;
+	--x-space-6: 1rem;
+	--x-space-7: 1.15rem;
+	--x-space-8: 1.4rem;
 
 	/* colors */
 	--x-primary-1: 200, 20%, 0%;
@@ -73,7 +73,7 @@ body {
 .container {
 	margin: 0 auto;
 	max-width: var(--x-container-width);
-	padding: var(--x-spacing-6);
+	padding: var(--x-space-6);
 }
 
 form {
@@ -86,13 +86,14 @@ form {
 	label {
 		font-size: 0.8rem;
 		display: block;
-		padding-bottom: var(--x-spacing-2);
+		padding-bottom: var(--x-space-2);
 		color: hsl(var(--x-font-color));
 	}
 
 	input {
-		padding: var(--x-spacing-4);
+		padding: var(--x-space-4);
 		width: stretch;
+		height: var(--x-space-6);
 		font-size: 0.9rem;
 		border-radius: 0.2rem;
 		border: var(--x-border-size-1) solid hsl(var(--x-gray-4));
@@ -108,7 +109,7 @@ a {
 
 .button {
 	color: var(--x-font-color);
-	padding: var(--x-spacing-3) var(--x-spacing-5);
+	padding: var(--x-space-3) var(--x-space-5);
 	border: var(--x-border-size-1) solid hsl(var(--x-gray-5));
 	border-radius: var(--x-border-radius);
 	cursor: pointer;
@@ -124,7 +125,7 @@ a {
 	}
 
 	&.primary {
-		padding: var(--x-spacing-3) var(--x-spacing-6);
+		padding: var(--x-space-3) var(--x-space-6);
 		background-color: hsl(var(--x-primary-2));
 		border-color: hsl(var(--x-primary-2));
 		color: white;
@@ -134,7 +135,7 @@ a {
 .badge {
 	background-color: hsl(var(--x-gray-2));
 	display: inline;
-	padding: var(--x-spacing-2) var(--x-spacing-4);
+	padding: var(--x-space-2) var(--x-space-4);
 	font-size: var(--x-text-xs);
 	border: var(--x-border-size-1) solid hsl(var(--x-gray-4));
 	border-radius: var(--x-border-radius);

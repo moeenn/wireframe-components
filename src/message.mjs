@@ -39,7 +39,7 @@ class Message extends CustomElement {
                     div {
 	                    margin: 0 auto;
 						max-width: var(--x-container-width);
-						padding: var(--x-spacing-6);
+						padding: var(--x-space-6);
 	                    display: flex;
 	                    justify-content: space-between;
 						p { margin: auto 0; }
@@ -48,7 +48,7 @@ class Message extends CustomElement {
                      		cursor: pointer;
                        		border: none;
                          	border-radius: var(--x-boder-radius);
-                            padding: var(--x-spacing-2) var(--x-spacing-4);
+                            padding: var(--x-space-2) var(--x-space-4);
                             margin: auto 0;
                        }
                     }

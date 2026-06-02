@@ -31,7 +31,7 @@ class Modal extends CustomElement {
 
 	                .window-container {
 	                    margin: auto;
-	                    padding: var(--x-spacing-6);
+	                    padding: var(--x-space-6);
 	                    width: ${this.width};
 
 			           .window {
@@ -42,7 +42,7 @@ class Modal extends CustomElement {
 			               border: var(--x-border-size-1) solid hsl(var(--x-gray-4));
 
 			               .modal-header {
-			                   padding: var(--x-spacing-6);
+			                   padding: var(--x-space-6);
 			                   display: flex;
 			                   justify-content: space-between;
 			                   font-family: var(--x-font);
@@ -60,7 +60,7 @@ class Modal extends CustomElement {
 
 			               .modal-footer {
 			                   background-color: hsla(var(--x-gray-2), 50%);
-			                   padding: var(--x-spacing-8) var(--x-spacing-6);
+			                   padding: var(--x-space-8) var(--x-space-6);
 			               }
 			           }
                     }

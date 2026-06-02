@@ -18,7 +18,7 @@ class BreadCrumbs extends CustomElement {
 					display: inline-flex;
 
 					.entry {
-						padding: var(--x-spacing-2) var(--x-spacing-3);
+						padding: var(--x-space-2) var(--x-space-3);
 						font-size: var(--x-text-sm);
 						color: var(--x-font-color);
 						margin: auto 0;
@@ -31,10 +31,10 @@ class BreadCrumbs extends CustomElement {
 					}
 
 					svg {
-						padding: auto var(--x-spacing-3);
+						padding: auto var(--x-space-3);
 						color: var(--x-font-color);
 						height: 1rem;
-						margin: auto var(--x-spacing-3);
+						margin: auto var(--x-space-3);
 					}
 				}
 			</style>

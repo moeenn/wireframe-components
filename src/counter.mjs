@@ -26,7 +26,7 @@ class Counter extends CustomElement {
                     font-size: var(--x-text-sm);
 
                     .increment, .decrement, .value {
-                        padding: var(--x-spacing-3) var(--x-spacing-4);
+                        padding: var(--x-space-3) var(--x-space-4);
                     }
 
                     .increment, .decrement {

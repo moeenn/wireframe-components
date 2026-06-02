@@ -5,6 +5,9 @@ A set of web-components, usable in all front-end frameworks.
 ## Included Components
 
 - Avatar
+- Badges
+- Breadcrumbs
+- Buttons
 - Checkbox
 - Counter
 - Loader

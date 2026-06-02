@@ -38,15 +38,15 @@ class Menu extends CustomElement {
 						width: ${this.#width};
 						border-radius: var(--x-border-radius);
 						box-shadow: var(--x-shadow-sm);
-						margin-top: var(--x-spacing-4);
+						margin-top: var(--x-space-4);
 						z-index: var(--x-layer-3);
 
 						&.left { right: 0; }
-						&.top-right { bottom: calc(100% + var(--x-spacing-4)); }
+						&.top-right { bottom: calc(100% + var(--x-space-4)); }
 
 						&.top-left {
 							right: 0;
-							bottom: calc(100% + var(--x-spacing-4));
+							bottom: calc(100% + var(--x-space-4));
 						}
 
 						&.hidden { display: none; }
