@@ -18,8 +18,6 @@ A set of web-components, usable in all front-end frameworks.
 
 ### Todo
 
-- [ ] New Component: Lightbox.
-- [ ] New Component: Tooltip.
 - [ ] New Component: Password field.
 - [ ] New Component: File upload field.
 - [ ] New Component: Paginated table components.
